@@ -35,7 +35,7 @@ TIMEOUT=25
 RETVAL=0
 TIMESTAMP=`echo | date`
 
-# If port SNI is not set up then we remove -servername from openssl command
+# If SNI is not set up then we remove -servername from openssl command
 if [ -z ${SNI+x} ]
 then
 	# Port is not set up
@@ -48,8 +48,7 @@ then
 	fi
 else
 
-# If port is not set up it will default to 443 but -s is defined
-# but SNI it is
+# If port is not set up it will default to 443 but SNI is defined
 	if [ -z ${PORT+x} ]
 	then
 		PORT=443;
